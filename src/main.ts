@@ -38,6 +38,7 @@ const inputElmCompiler = core.getInput('elm_compiler')
 const inputElmFormat = core.getInput('elm_format')
 const inputElmJson = core.getInput('elm_json')
 const inputElmFiles = core.getInput('elm_files')
+const inputIgnoreDirs = core.getInput('ignore_dirs')
 
 const workingDirectory = core.getInput('working-directory')
 
@@ -62,7 +63,8 @@ const elmReviewArgs = (): string[] => {
     ...arg('--config', inputElmReviewConfig),
     ...arg('--compiler', inputElmCompiler),
     ...arg('--elm-format-path', inputElmFormat),
-    ...arg('--elmjson', inputElmJson)
+    ...arg('--elmjson', inputElmJson),
+    ...arg('--ignore-dirs', globFiles(inputIgnoreDirs).join(' ')),
   ]
 }
 

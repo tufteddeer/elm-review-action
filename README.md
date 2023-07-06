@@ -116,6 +116,9 @@ List of Elm files or directories you wish to review.  Unless files or directorie
 - For packages: `src/` and `tests/`
 - For applications: the `source-directories` in the project's `elm.json` and `tests/`
 
+### ignore_dirs
+
+List of directories not to review.
 
 ### working-directory
 
