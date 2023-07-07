@@ -86,8 +86,8 @@ const runElmReview = async (): Promise<ReviewErrors | CliError> => {
     silent: true
   }
 
-  core.debug("args: " + elmReviewArgs())
-  
+  core.info("args: " + elmReviewArgs())
+
   await exec.exec(inputElmReview, elmReviewArgs(), options)
 
   if (errput.length > 0) {
